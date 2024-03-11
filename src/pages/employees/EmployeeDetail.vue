@@ -27,12 +27,12 @@
     <section>
       <base-card>
         <h2>Employee's Personal Information</h2>
-        <b>Address:</b>
+        <!-- <b>Address:</b>
         <span v-if="address">
           {{ address.street }} {{ address.city }}, {{ address.state }},
           {{ address.country }} {{ address.postal_code }}
         </span>
-        <span v-else>Address not available</span>
+        <span v-else>Address not available</span> -->
 
         <p><b>Date of birth:</b>{{ dateOfBirth }}</p>
         <p><b>Age: </b>{{ age }}</p>

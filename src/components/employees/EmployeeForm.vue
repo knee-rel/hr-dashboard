@@ -1,5 +1,3 @@
-based on this component, create a dropdown button for employee's department:
-
 <template>
   <form @submit.prevent="submitForm">
     <div class="form-control" :class="{ invalid: !firstName.isValid }">
@@ -98,7 +96,7 @@ based on this component, create a dropdown button for employee's department:
       <p v-if="!gender.isValid">Please select a gender.</p>
     </div>
 
-    <div class="form-control" :class="{ invalid: !street.isValid }">
+    <!-- <div class="form-control" :class="{ invalid: !street.isValid }">
       <label for="street">Street</label>
       <input
         type="text"
@@ -151,7 +149,7 @@ based on this component, create a dropdown button for employee's department:
         @blur="clearValidity('country')"
       />
       <p v-if="!country.isValid">Country must not be empty.</p>
-    </div>
+    </div> -->
 
     <!-- Employment Details -->
     <h2>Employment Details</h2>
@@ -271,26 +269,26 @@ export default {
         isValid: true,
       },
       // for address
-      street: {
-        val: "",
-        isValid: true,
-      },
-      city: {
-        val: "",
-        isValid: true,
-      },
-      state: {
-        val: "",
-        isValid: true,
-      },
-      postalCode: {
-        val: "",
-        isValid: true,
-      },
-      country: {
-        val: "",
-        isValid: true,
-      },
+      // street: {
+      //   val: "",
+      //   isValid: true,
+      // },
+      // city: {
+      //   val: "",
+      //   isValid: true,
+      // },
+      // state: {
+      //   val: "",
+      //   isValid: true,
+      // },
+      // postalCode: {
+      //   val: "",
+      //   isValid: true,
+      // },
+      // country: {
+      //   val: "",
+      //   isValid: true,
+      // },
       department: {
         val: "",
         isValid: true,
@@ -356,26 +354,26 @@ export default {
         this.gender.isValid = false;
         this.formIsValid = false;
       }
-      if (this.street.val === "") {
-        this.street.isValid = false;
-        this.formIsValid = false;
-      }
-      if (this.city.val === "") {
-        this.city.isValid = false;
-        this.formIsValid = false;
-      }
-      if (this.state.val === "") {
-        this.state.isValid = false;
-        this.formIsValid = false;
-      }
-      if (this.postalCode.val === "") {
-        this.postalCode.isValid = false;
-        this.formIsValid = false;
-      }
-      if (this.country.val === "") {
-        this.country.isValid = false;
-        this.formIsValid = false;
-      }
+      // if (this.street.val === "") {
+      //   this.street.isValid = false;
+      //   this.formIsValid = false;
+      // }
+      // if (this.city.val === "") {
+      //   this.city.isValid = false;
+      //   this.formIsValid = false;
+      // }
+      // if (this.state.val === "") {
+      //   this.state.isValid = false;
+      //   this.formIsValid = false;
+      // }
+      // if (this.postalCode.val === "") {
+      //   this.postalCode.isValid = false;
+      //   this.formIsValid = false;
+      // }
+      // if (this.country.val === "") {
+      //   this.country.isValid = false;
+      //   this.formIsValid = false;
+      // }
       if (this.department.val === "") {
         this.department.isValid = false;
         this.formIsValid = false;
@@ -407,11 +405,11 @@ export default {
         age: this.age.val,
         dateOfBirth: this.dateOfBirth.val,
         gender: this.gender.val,
-        street: this.street.val,
-        city: this.city.val,
-        state: this.state.val,
-        postalCode: this.postalCode.val,
-        country: this.country.val,
+        // street: this.street.val,
+        // city: this.city.val,
+        // state: this.state.val,
+        // postalCode: this.postalCode.val,
+        // country: this.country.val,
         department: this.department.val,
         position: this.position.val,
         hireDate: this.hireDate.val,

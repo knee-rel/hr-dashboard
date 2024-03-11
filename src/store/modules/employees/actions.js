@@ -13,11 +13,11 @@ export default {
       age: data.age,
       dateOfBirth: data.dateOfBirth,
       gender: data.gender,
-      street: data.address.street,
-      city: data.address.city,
-      state: data.address.state,
-      postalCode: data.address.postalCode,
-      country: data.address.country,
+      // street: data.address.street,
+      // city: data.address.city,
+      // state: data.address.state,
+      // postalCode: data.address.postalCode,
+      // country: data.address.country,
       department: data.department,
       hireDate: data.hireDate,
     };
@@ -28,7 +28,7 @@ export default {
       `https://managerio-4a0e9-default-rtdb.asia-southeast1.firebasedatabase.app/employees/${userId}.json?auth=` +
         token,
       {
-        method: "PUT",
+        method: "POST",
         body: JSON.stringify(employeeData),
       }
     );
@@ -71,11 +71,11 @@ export default {
         employment: responseData[key].employment,
         age: responseData[key].age,
         gender: responseData[key].gender,
-        street: responseData[key].street,
-        city: responseData[key].city,
-        state: responseData[key].state,
-        postalCode: responseData[key].postalCode,
-        country: responseData[key].country,
+        // street: responseData[key].street,
+        // city: responseData[key].city,
+        // state: responseData[key].state,
+        // postalCode: responseData[key].postalCode,
+        // country: responseData[key].country,
       };
       employees.push(employee);
     }
