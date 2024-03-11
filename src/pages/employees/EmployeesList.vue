@@ -16,22 +16,10 @@
           <base-button mode="outline" @click="loadEmployees(true)"
             >Refresh</base-button
           >
-          <!-- <base-button link to="/auth?redirect=register" v-if="!isLoggedIn"
-            >Login</base-button
-          >
-          <base-button
-            v-if="isLoggedIn && !isEmployee && !isLoading"
-            link
-            to="/register"
-            >Register</base-button
-          > -->
           <base-button link to="/auth?redirect=register" v-if="!isLoggedIn"
             >Login to Register Employees</base-button
           >
-          <base-button
-            v-if="isLoggedIn && !isCoach && !isLoading"
-            link
-            to="/register"
+          <base-button v-if="isLoggedIn && !isLoading" link to="/register"
             >Register an Employee</base-button
           >
         </div>

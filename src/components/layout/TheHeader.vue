@@ -8,13 +8,7 @@
         <li>
           <router-link to="/employees">All Employees</router-link>
         </li>
-        <li v-if="isLoggedIn">
-          <router-link to="/requests">Regular Employees</router-link>
-        </li>
-        <li v-if="isLoggedIn">
-          <router-link to="/requests">Contractual Employees</router-link>
-        </li>
-        <li v-else>
+        <li v-if="!isLoggedIn">
           <router-link to="/auth">Login</router-link>
         </li>
         <li v-if="isLoggedIn">
