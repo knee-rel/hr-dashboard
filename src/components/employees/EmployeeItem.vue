@@ -4,7 +4,10 @@
     <h4>Position: {{ employeePosition }}</h4>
     <h4>Department: {{ department }}</h4>
     <div>
-      <base-badge :type="employment" :title="employment"></base-badge>
+      <h4>
+        Employment:
+        <base-badge :type="employment" :title="employment"></base-badge>
+      </h4>
     </div>
     <div class="actions">
       <base-button mode="outline" link :to="employeeContactLink"

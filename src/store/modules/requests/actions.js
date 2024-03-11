@@ -5,7 +5,7 @@ export default {
       message: payload.message,
     };
     const response = await fetch(
-      `https://vue-http-demo-85e9e.firebaseio.com/requests/${payload.employeeId}.json`,
+      `https://managerio-4a0e9-default-rtdb.asia-southeast1.firebasedatabase.app/requests/${payload.employeeId}.json`,
       {
         method: "POST",
         body: JSON.stringify(newRequest),
@@ -30,7 +30,7 @@ export default {
     const employeeId = context.rootGetters.userId;
     const token = context.rootGetters.token;
     const response = await fetch(
-      `https://vue-http-demo-85e9e.firebaseio.com/requests/${employeeId}.json?auth=` +
+      `https://managerio-4a0e9-default-rtdb.asia-southeast1.firebasedatabase.app/requests/${employeeId}.json?auth=` +
         token
     );
     const responseData = await response.json();

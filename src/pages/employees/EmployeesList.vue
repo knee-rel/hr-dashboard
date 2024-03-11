@@ -16,7 +16,7 @@
           <base-button mode="outline" @click="loadEmployees(true)"
             >Refresh</base-button
           >
-          <base-button link to="/auth?redirect=register" v-if="!isLoggedIn"
+          <!-- <base-button link to="/auth?redirect=register" v-if="!isLoggedIn"
             >Login</base-button
           >
           <base-button
@@ -24,6 +24,15 @@
             link
             to="/register"
             >Register</base-button
+          > -->
+          <base-button link to="/auth?redirect=register" v-if="!isLoggedIn"
+            >Login to Register Employees</base-button
+          >
+          <base-button
+            v-if="isLoggedIn && !isCoach && !isLoading"
+            link
+            to="/register"
+            >Register an Employee</base-button
           >
         </div>
         <div v-if="isLoading">
@@ -34,6 +43,8 @@
             v-for="employee in filteredEmployees"
             :key="employee.id"
             :id="employee.id"
+            :email="employee.email"
+            :phone-number="employee.phoneNumber"
             :first-name="employee.firstName"
             :last-name="employee.lastName"
             :position="employee.position"

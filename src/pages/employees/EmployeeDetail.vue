@@ -10,9 +10,9 @@
           Employment Status:
           <base-badge :type="employment" :title="employment"></base-badge>
         </h3>
-        <p>P{{ rate }}/hour</p>
-        <p>Manager: {{ manager.name }}</p>
-        <p>Hire Date: {{ hireDate }}</p>
+        <p><b>Rate: </b> P{{ rate }}/hour</p>
+        <p><b>Manager: </b> {{ manager ? manager.name : "No Manager" }}</p>
+        <p><b>Hire Date: </b> {{ hireDate }}</p>
       </base-card>
     </section>
     <section>
@@ -27,11 +27,17 @@
     <section>
       <base-card>
         <h2>Employee's Personal Information</h2>
-        <p>
-          <b>Address:</b>{{ address.street }} {{ address.city }},
-          {{ address.state }}, {{ address.country }} {{ address.postal_code }}
-        </p>
+        <b>Address:</b>
+        <span v-if="address">
+          {{ address.street }} {{ address.city }}, {{ address.state }},
+          {{ address.country }} {{ address.postal_code }}
+        </span>
+        <span v-else>Address not available</span>
+
         <p><b>Date of birth:</b>{{ dateOfBirth }}</p>
+        <p><b>Age: </b>{{ age }}</p>
+        <p><b>Gender </b>{{ gender }}</p>
+        <p><b>Phone Number </b>{{ phoneNumber }}</p>
       </base-card>
     </section>
   </div>
@@ -80,6 +86,15 @@ export default {
     },
     hireDate() {
       return this.selectedEmployee.hireDate;
+    },
+    age() {
+      return this.selectedEmployee.age;
+    },
+    gender() {
+      return this.selectedEmployee.gender;
+    },
+    phoneNumber() {
+      return this.selectedEmployee.phoneNumber;
     },
   },
   created() {

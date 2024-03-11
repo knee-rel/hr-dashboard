@@ -12,7 +12,7 @@
           <router-link to="/requests">Regular Employees</router-link>
         </li>
         <li v-if="isLoggedIn">
-          <router-link to="/requests"> Employees</router-link>
+          <router-link to="/requests">Contractual Employees</router-link>
         </li>
         <li v-else>
           <router-link to="/auth">Login</router-link>

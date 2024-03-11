@@ -4,15 +4,28 @@ export default {
     const employeeData = {
       firstName: data.first,
       lastName: data.last,
+      email: data.email,
+      phoneNumber: data.phoneNumber,
       description: data.desc,
       hourlyRate: data.rate,
       employment: data.employment,
+      position: data.position,
+      age: data.age,
+      dateOfBirth: data.dateOfBirth,
+      gender: data.gender,
+      street: data.address.street,
+      city: data.address.city,
+      state: data.address.state,
+      postalCode: data.address.postalCode,
+      country: data.address.country,
+      department: data.department,
+      hireDate: data.hireDate,
     };
 
     const token = context.rootGetters.token;
 
     const response = await fetch(
-      `https://vue-http-demo-85e9e.firebaseio.com/employees/${userId}.json?auth=` +
+      `https://managerio-4a0e9-default-rtdb.asia-southeast1.firebasedatabase.app/employees/${userId}.json?auth=` +
         token,
       {
         method: "PUT",
@@ -37,7 +50,7 @@ export default {
     }
 
     const response = await fetch(
-      `https://vue-http-demo-85e9e.firebaseio.com/employees.json`
+      `https://managerio-4a0e9-default-rtdb.asia-southeast1.firebasedatabase.app/employees.json`
     );
     const responseData = await response.json();
 
@@ -56,6 +69,13 @@ export default {
         description: responseData[key].description,
         hourlyRate: responseData[key].hourlyRate,
         employment: responseData[key].employment,
+        age: responseData[key].age,
+        gender: responseData[key].gender,
+        street: responseData[key].street,
+        city: responseData[key].city,
+        state: responseData[key].state,
+        postalCode: responseData[key].postalCode,
+        country: responseData[key].country,
       };
       employees.push(employee);
     }
